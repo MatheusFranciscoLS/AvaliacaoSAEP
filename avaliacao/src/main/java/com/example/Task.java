@@ -1,23 +1,22 @@
 package com.example;
 
 public class Task {
-    // atributos
     private int id;
     private String description;
     private boolean done;
+    private User responsavel; // Responsável pela tarefa
 
-    // Construtor
-    public Task(int id, String description, boolean done) {
+    // Construtores, getters e setters
+
+    public Task(int id, String description, boolean done, User responsavel) {
         this.id = id;
         this.description = description;
         this.done = done;
-    }
-
-    public Task(String description) {
-        this(0, description, false);  // Tarefa nova terá id 0
+        this.responsavel = responsavel;
     }
 
     // Getters e Setters
+
     public int getId() {
         return id;
     }
@@ -38,7 +37,18 @@ public class Task {
         return done;
     }
 
+    // Adicionando o setDone
     public void setDone(boolean done) {
         this.done = done;
     }
+
+    public User getResponsavel() {
+        return responsavel;
+    }
+
+    public void setResponsavel(User responsavel) {
+        this.responsavel = responsavel;
+    }
+
+    
 }
